@@ -1,0 +1,20 @@
+{% include "header.html" %}
+
+<div class="container">
+    <div class="row">
+        {% for portfolio in portfolio_list %}
+        <div>
+            <hr>
+            <a href="{{url_for('detail_portfolio', id=portfolio.id)}}"><h1>{{portfolio.id}}</h1></a>
+            <h1>{{portfolio.name}}</h1>
+            <img src="static/img/{{portfolio.img_name}}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+</body>
+</html>
